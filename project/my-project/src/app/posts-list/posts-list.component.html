@@ -1,0 +1,24 @@
+<div class="container">
+
+    <!--Display posts table-->
+    <div *ngIf="isLoading">
+        <app-loader />
+    </div>
+    
+    <div class="posts-table" *ngIf="!isLoading">
+        <div class="table-head">
+            <div class="subjects">Subjects</div>
+            <div class="replies">Date</div>
+        </div>
+
+        <div *ngFor="let post of postsList" class="table-row">
+            <div class="subjects">
+                <a href="">{{post.themeId.themeName}}</a>
+                <br>
+                <span>Posted by <b><a href="">{{post.userId.username}}</a></b> .</span>
+            </div>
+            <div class="replies">
+                {{post.created_at}}
+            </div>
+
+        </div>

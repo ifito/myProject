@@ -1,0 +1,26 @@
+<header>
+    <!--NavBar Section-->
+    <div class="navbar">
+        <nav class="navigation hide" id="navigation">
+            <!-- <span class="close-icon" id="close-icon" ><i class="fa fa-close"></i></span> -->
+            
+        </nav>
+        <!-- <a class="bar-icon" id="iconBar"><i class="fa fa-bars"></i></a> -->
+        <div class="brand">Forum for cars</div>
+    </div>
+
+    <div>
+        <ul class="nav-list">
+            <li *ngIf="isLoggedIn" class="nav-item"><a routerLink="/register">Register</a></li>
+            <li *ngIf="isLoggedIn" class="nav-item"><a routerLink="/login">Login</a></li>
+            <li class="nav-item"><a routerLink="/detail">User Detail</a></li>
+            <li class="nav-item"><a routerLink="/new-post">New Posts</a></li>
+            <li class="nav-item"><a routerLink="/posts">Posts</a></li>
+                                        <!-- ili "/add-post" -->
+            <li class="nav-item"><a routerLink="/forums">Forums</a></li>
+            <li class="nav-item"><a routerLink="/home">Home</a></li>
+        </ul>
+    </div>
+
+    
+</header>
