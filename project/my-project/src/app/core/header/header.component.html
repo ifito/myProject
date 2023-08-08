@@ -11,12 +11,14 @@
 
     <div>
         <ul class="nav-list">
-            <li *ngIf="isLoggedIn" class="nav-item"><a routerLink="/register">Register</a></li>
-            <li *ngIf="isLoggedIn" class="nav-item"><a routerLink="/login">Login</a></li>
-            <li class="nav-item"><a routerLink="/detail">User Detail</a></li>
-            <li class="nav-item"><a routerLink="/new-post">New Posts</a></li>
+            <li *ngIf="!isLoggedIn" class="nav-item"><a routerLink="/register">Register</a></li>
+            <li *ngIf="!isLoggedIn" class="nav-item"><a routerLink="/login">Login</a></li>
+
+            <li *ngIf="isLoggedIn" class="nav-item"><a (click)="logout()">Logout</a></li>
+            <li *ngIf="isLoggedIn" class="nav-item"><a routerLink="/detail">User Detail</a></li>
+
+            <li *ngIf="isLoggedIn" class="nav-item"><a routerLink="/add-post">New Post</a></li>
             <li class="nav-item"><a routerLink="/posts">Posts</a></li>
-                                        <!-- ili "/add-post" -->
             <li class="nav-item"><a routerLink="/forums">Forums</a></li>
             <li class="nav-item"><a routerLink="/home">Home</a></li>
         </ul>

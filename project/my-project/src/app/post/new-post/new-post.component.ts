@@ -1,4 +1,6 @@
+import { formatCurrency } from '@angular/common';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-post',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class NewPostComponent {
 
+  newPostHandler(form: NgForm):void {
+    if(form.invalid) {
+      return;
+    }
+
+    console.log(form.value);
+    
+  }
 }

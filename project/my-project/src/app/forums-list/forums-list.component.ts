@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Forum } from '../types/forum';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-forums-list',
@@ -11,7 +12,11 @@ export class ForumsListComponent implements OnInit {
   forumsList: Forum[] = [];
   isLoading: boolean = true;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private userService: UserService) { }
+
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
 
   ngOnInit(): void {
     this.apiService.getForums().subscribe(

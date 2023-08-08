@@ -11,6 +11,11 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  getPost(id:string) {
+    const {appUrl} = environment;
+    return this.http.get<Forum>(`${appUrl}/themes/${id}`);
+  }
+
   getForums() {
     const {appUrl} = environment;
     return this.http.get<Forum[]>(`${appUrl}/themes`);

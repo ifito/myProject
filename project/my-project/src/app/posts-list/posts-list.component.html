@@ -13,9 +13,9 @@
 
         <div *ngFor="let post of postsList" class="table-row">
             <div class="subjects">
-                <a href="">{{post.themeId.themeName}}</a>
+                <a routerLink="/forums">{{post.themeId.themeName}}</a>
                 <br>
-                <span>Posted by <b><a href="">{{post.userId.username}}</a></b> .</span>
+                <span>Posted by <b><a routerLink="/detail">{{post.userId.username}}</a></b> .</span>
             </div>
             <div class="replies">
                 {{post.created_at}}

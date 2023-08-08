@@ -13,14 +13,14 @@
             <i class="fa fa-car center"></i>
         </div>
         <div class="subforum-description subforum-column">
-            <h4><a href="#">{{forum.themeName}}</a></h4>
+            <h4><a [routerLink]="forum._id">{{forum.themeName}}</a></h4>
             <p>{{forum.userId.username}}</p>
         </div>
         <div class="subforum-stats subforum-column center">
             <span>{{forum.created_at}}</span>
         </div>
         <div class="subforum-info subforum-column">
-            <b><a href="">Likes</a></b> {{forum.subscribers.length}}
+            <b><a *ngIf="isLogged" href="">Become a Fan / </a></b> {{forum.subscribers.length}} Fans
         </div>
 
     </div>
