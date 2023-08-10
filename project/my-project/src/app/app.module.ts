@@ -7,11 +7,12 @@ import { CoreModule } from './core/core.module';
 import { MainComponent } from './main/main.component';
 import { ForumsListComponent } from './forums-list/forums-list.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
-import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
+import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PostModule } from './post/post.module';
     MainComponent,
     ForumsListComponent,
     PostsListComponent,
-    HomeComponent
+    HomeComponent,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +29,9 @@ import { PostModule } from './post/post.module';
     CoreModule,
     HttpClientModule,
     SharedModule,
-    UserModule,
     PostModule
   ],
-  providers: [],
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

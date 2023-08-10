@@ -12,17 +12,17 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getPost(id:string) {
-    const {appUrl} = environment;
-    return this.http.get<Forum>(`${appUrl}/themes/${id}`);
+    const {apiUrl} = environment;
+    return this.http.get<Forum>(`${apiUrl}/themes/${id}`);
   }
 
   getForums() {
-    const {appUrl} = environment;
-    return this.http.get<Forum[]>(`${appUrl}/themes`);
+    const {apiUrl} = environment;
+    return this.http.get<Forum[]>(`${apiUrl}/themes`);
   }
 
   getPosts() {
-    const {appUrl} = environment;
-    return this.http.get<Post[]>(`${appUrl}/posts`);
+    const {apiUrl} = environment;
+    return this.http.get<Post[]>(`${apiUrl}/posts`);
   }
 }
