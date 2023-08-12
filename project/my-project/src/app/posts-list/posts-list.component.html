@@ -18,7 +18,7 @@
                 <span>Posted by <b><a routerLink="/auth/detail">{{post.userId.username}}</a></b> .</span>
             </div>
             <div class="replies">
-                {{post.created_at}}
+                {{post.created_at | elapsedTime}}
             </div>
 
         </div>
