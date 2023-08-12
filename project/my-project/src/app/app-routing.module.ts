@@ -27,10 +27,10 @@ const routes: Routes = [
     path: 'error',
     component: ErrorComponent
   },
-  {
-    path: '**',
-    component: PageNotFoundComponent
-  }
+  // {
+  //   path: '**',
+  //   component: PageNotFoundComponent
+  // }
 ];
 
 @NgModule({
