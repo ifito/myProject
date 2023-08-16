@@ -14,6 +14,7 @@ import { PostModule } from './post/post.module';
 import { appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PostsListComponent,
     HomeComponent,
     AuthenticateComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,

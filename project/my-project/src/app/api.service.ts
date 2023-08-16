@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Forum } from './types/forum';
 import { Post } from './types/post';
 import { ActivatedRoute } from '@angular/router';
+import { identifierName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,10 @@ export class ApiService {
     return this.http.post<Forum>('/api/themes', { themeName, postText });
   }
 
-  createComment(postText: string) {
-    return this.http.post<Forum>(`/api/themes/`, { postText });
+  createComment(postText: string, id:string) {
+    //const id = this.activatedRoute.snapshot.params['themeId'];
+    
+    return this.http.post<Forum>(`/api/themes/${id}`, { postText, id });
   }
 
   getPosts() {

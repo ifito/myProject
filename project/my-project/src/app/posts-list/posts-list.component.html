@@ -4,7 +4,7 @@
     <div *ngIf="isLoading">
         <app-loader />
     </div>
-    
+
     <div class="posts-table" *ngIf="!isLoading">
         <div class="table-head">
             <div class="subjects">Subjects</div>
@@ -16,7 +16,18 @@
                 <a routerLink="/forums">{{post.themeId.themeName}}</a>
                 <br>
                 <span>Posted by <b><a routerLink="/auth/detail">{{post.userId.username}}</a></b> .</span>
+                <br>
+                <span>Text: {{post.text}}</span>
             </div>
+
+            <ng-container>
+                <div class="answer">
+                    <button (click)="viewPost(post.themeId._id, post.userId._id)">Edit</button>
+                    <button>Delete</button>
+                </div>
+            </ng-container>
+
+
             <div class="replies">
                 {{post.created_at | elapsedTime}}
             </div>

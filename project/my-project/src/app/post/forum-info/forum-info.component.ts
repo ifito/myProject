@@ -36,7 +36,9 @@ export class ForumInfoComponent implements OnInit {
 
 
     const { postText } = form.value;
-    this.apiService.createComment(postText).subscribe(() => {
+    const id = this.activatedRoute.snapshot.params['themeId'];
+    
+    this.apiService.createComment(postText, id).subscribe(() => {
 
       this.router.navigate(['/forums']);
     });
