@@ -1,2 +1,2 @@
 # myProject
- Project Defense - Regular Exam
+ Project Defense
